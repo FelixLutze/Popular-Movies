@@ -2,7 +2,11 @@
 Allow users to discover the most popular movies playing.
 
 The Application can be installed and used on any Android device (minSdkVersion = 16).
+
 This project regards to the <a href="https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801" title="Android Developer Nanodegree program">Android Developer Nanodegree program</a> at Udacity.
+
+## Getting Started
+Download and compile this Project with <a href="https://developer.android.com/studio" title="Android Studio">Android Studio</a>.
 
 ### What will i Learned by creating this project?
 <ul>
@@ -10,3 +14,4 @@ This project regards to the <a href="https://www.udacity.com/course/android-deve
 <li>use adapters and custom list layouts to populate list views.</li>
 <li>Incorporate libraries to simplify the amount of code you need to write.</li>
 </ul>
+

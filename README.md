@@ -8,7 +8,7 @@ This project regards to the <a href="https://www.udacity.com/course/android-deve
 ## Getting Started
 Download and compile this Project with <a href="https://developer.android.com/studio" title="Android Studio">Android Studio</a>.
 
-### What will i Learned by creating this project?
+### What did I Learn after creating this project?
 <ul>
 <li>Fetch data from the Internet with theMovieDB API.</li>
 <li>use adapters and custom list layouts to populate list views.</li>

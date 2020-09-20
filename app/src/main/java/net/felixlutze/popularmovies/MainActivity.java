@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateUi() {
         mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON("https://api.themoviedb.org/3/discover/movie?api_key=<<api-key>>&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1");
+        parseJSON("https://api.themoviedb.org/3/discover/movie?api_key=a79ca4a1a3f64471019801edc4668e08&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1");
     }
 
     public void parseJSON(String url) {
@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
                                 String rating = movie.getString("vote_average");
                                 String released = movie.getString("release_date");
 
-                                movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w342/"+image, name, rating, released));
+                                String backdrop = movie.getString("backdrop_path");
+                                String overview = movie.getString("overview");
+
+                                movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w342/"+image, name, rating, released, backdrop, overview));
                             }
 
                             RecyclerView.Adapter mAdapter = new MovieAdapter(movieItemList, MainActivity.this);

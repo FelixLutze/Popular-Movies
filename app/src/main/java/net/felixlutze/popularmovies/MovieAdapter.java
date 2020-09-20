@@ -1,12 +1,12 @@
 package net.felixlutze.popularmovies;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,10 +63,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(context , currentMovieItem.getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, MovieDetails.class);
+                intent.putExtra("name", currentMovieItem.getName());
+                intent.putExtra("backdrop", currentMovieItem.getBackdrop());
+                intent.putExtra("released", currentMovieItem.getReleased());
+                intent.putExtra("rating", currentMovieItem.getRating());
+                intent.putExtra("overview", currentMovieItem.getOverview());
+                context.startActivity(intent);
             }
         });
-
     }
 
     @Override

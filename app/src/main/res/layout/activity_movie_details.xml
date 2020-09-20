@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MovieDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/movie_backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="Movie backdrop image"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/movie_name"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Example Movie"/>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="21sp"
+                android:text="Released: "/>
+
+            <TextView
+                android:id="@+id/movie_released"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:paddingBottom="7dp"
+                tools:text="2020-08-28"/>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="21sp"
+                android:text="Rating:"/>
+
+            <TextView
+                android:id="@+id/movie_rating"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:paddingBottom="7dp"
+                tools:text="7.5"/>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="21sp"
+                android:text="Overview:"/>
+
+            <TextView
+                android:id="@+id/movie_overview"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ante, fringilla a convallis id, euismod in nisl. Sed molestie aliquam blandit. Curabitur non elit ut odio gravida vulputate. Aliquam gravida hendrerit molestie. Ut fringilla faucibus libero, dapibus imperdiet ipsum accumsan vel. Aenean ligula leo, semper eu suscipit in, molestie nec sapien. Nullam hendrerit ex eget ipsum lobortis consequat. Fusce elementum urna a ante lacinia consequat. Praesent rutrum ut lectus volutpat eleifend. Sed viverra lectus id elit imperdiet congue. Sed eu mi nulla. Suspendisse rutrum metus vitae odio laoreet, gravida suscipit turpis ullamcorper. Aenean tempor enim tortor, eu vestibulum risus pharetra id. Maecenas eget justo nec lorem malesuada accumsan a quis turpis."/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

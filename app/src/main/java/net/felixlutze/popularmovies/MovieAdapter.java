@@ -23,11 +23,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
         public TextView name;
+        public TextView released;
+        public TextView rating;
 
         public MovieViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.movie_image);
             name = itemView.findViewById(R.id.movie_name);
+            released = itemView.findViewById(R.id.movie_released);
+            rating = itemView.findViewById(R.id.movie_rating);
         }
     }
 
@@ -50,6 +54,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
         Picasso.get().load(currentMovieItem.getImageResource()).into(holder.image);
         holder.name.setText(currentMovieItem.getName() + " #" + (position+1));
+        holder.released.setText(currentMovieItem.getReleased());
+        holder.rating.setText(currentMovieItem.getRating());
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {

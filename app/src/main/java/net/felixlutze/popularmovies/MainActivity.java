@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
         //Set Activity title based on set sorting
         switch (movieSorting) {
             case "rating":
-                MainActivity.this.setTitle("Movies by rating");
+                MainActivity.this.setTitle("Highest rated Movies");
                 break;
 
             case "popular":
-                MainActivity.this.setTitle("Movies by popularity");
+                MainActivity.this.setTitle("Most popular Movies");
                 break;
         }
     }

@@ -3,6 +3,7 @@ package net.felixlutze.popularmovies;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void parseJSON(String movieSorting) {
         //Enter your API-Key at https://api.themoviedb.org
-        String apiKey = "a79ca4a1a3f64471019801edc4668e08";
+        String apiKey = "API-KEY";
         String url = "https://api.themoviedb.org/3/discover/movie?api_key="+apiKey+"&sort_by=" ;
 
         switch (movieSorting) {
@@ -135,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.movie_popular:
                 movieSorting = "popular";
                 populateUi(movieSorting);
+                break;
+            case R.id.movie_reload:
+                populateUi(movieSorting);
+                Toast.makeText(MainActivity.this, "Reloaded movies", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

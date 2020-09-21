@@ -33,7 +33,8 @@
                 android:paddingBottom="7dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                tools:text="Example Movie"/>
+                tools:text="Example Movie"
+                android:visibility="gone"/>
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Title"

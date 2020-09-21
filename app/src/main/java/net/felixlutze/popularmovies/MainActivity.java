@@ -3,6 +3,8 @@ package net.felixlutze.popularmovies;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue mRequestQueue;
     private ArrayList<MovieItem> movieItemList = new ArrayList<>();
     private String movieSorting = "popular";
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mProgressBar = findViewById(R.id.progressBar);
         //Setup RecyclerView for movie List
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = findViewById(R.id.movies_view);
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void populateUi(String movieSorting) {
+        mProgressBar.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.GONE);
+
         //clear list by default
         mRequestQueue = Volley.newRequestQueue(this);
         parseJSON(movieSorting);
@@ -84,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                             movieItemList.clear();
                             //Parsing each object in JSON Array called results
                             JSONArray jsonArray = response.getJSONArray("results");
+
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject movie = jsonArray.getJSONObject(i);
                                 String name = movie.getString("title");
@@ -101,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                             RecyclerView.Adapter mAdapter = new MovieAdapter(movieItemList, MainActivity.this);
                             mRecyclerView.setAdapter(mAdapter);
+
+                            mProgressBar.setVisibility(View.GONE);
+                            mRecyclerView.setVisibility(View.VISIBLE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

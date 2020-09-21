@@ -47,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
         movieItemList.clear();
         mRequestQueue = Volley.newRequestQueue(this);
         parseJSON(movieSorting);
+
+        //Set Activity title based on set sorting
+        switch (movieSorting) {
+            case "rating":
+                MainActivity.this.setTitle("Movies by rating");
+                break;
+
+            case "popular":
+                MainActivity.this.setTitle("Movies by popularity");
+                break;
+        }
     }
 
     public void parseJSON(String movieSorting) {

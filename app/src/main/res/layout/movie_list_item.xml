@@ -19,8 +19,8 @@
         <ImageView
             android:id="@+id/movie_image"
             android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="342px"
+            android:layout_height="513px"
             android:src="@drawable/ic_launcher_foreground"
             android:contentDescription="Movie image" />
 
@@ -39,8 +39,8 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:paddingBottom="6dp"
-                android:paddingHorizontal="4dp"
-                android:textSize="22sp"
+
+                android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="Example Movie"/>
 
@@ -50,7 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textStyle="bold"
-                android:text="Released: "/>
+                android:textSize="18sp"
+                android:text="Released:"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/movie_released"
@@ -58,9 +60,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:paddingBottom="6dp"
-                tools:text="2020-08-28"/>
+                tools:text="2020-08-28"
+                android:visibility="gone"/>
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Title"
@@ -68,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textStyle="bold"
+                android:textSize="18sp"
                 android:text="Rating:"/>
 
             <TextView
@@ -76,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 tools:text="7.5"/>
         </LinearLayout>
 

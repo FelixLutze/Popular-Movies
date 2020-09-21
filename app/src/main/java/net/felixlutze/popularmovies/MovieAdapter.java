@@ -53,7 +53,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         final MovieItem currentMovieItem = mMovieItemList.get(position);
 
         Picasso.get().load(currentMovieItem.getImageResource()).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
-        holder.name.setText(currentMovieItem.getName() + " #" + (position+1));
+        holder.name.setText("#" + (position+1) + "\n" +currentMovieItem.getName());
         holder.released.setText(currentMovieItem.getReleased());
         holder.rating.setText(currentMovieItem.getRating());
 

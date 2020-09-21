@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateUi(String movieSorting) {
         //clear list by default
-        movieItemList.clear();
         mRequestQueue = Volley.newRequestQueue(this);
         parseJSON(movieSorting);
 
@@ -61,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void parseJSON(String movieSorting) {
-
-        String apiKey = "API-KEY";
+        //Enter your API-Key at https://api.themoviedb.org
+        String apiKey = "a79ca4a1a3f64471019801edc4668e08";
         String url = "https://api.themoviedb.org/3/discover/movie?api_key="+apiKey+"&sort_by=" ;
 
         switch (movieSorting) {
@@ -80,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            //Clear movie list by default
+                            movieItemList.clear();
                             //Parsing each object in JSON Array called results
                             JSONArray jsonArray = response.getJSONArray("results");
                             for (int i = 0; i < jsonArray.length(); i++) {
@@ -97,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w342/"+image, name, rating, released, backdrop, overview));
                             }
-
                             RecyclerView.Adapter mAdapter = new MovieAdapter(movieItemList, MainActivity.this);
                             mRecyclerView.setAdapter(mAdapter);
 
@@ -122,10 +122,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    // COMPLETED (10) Override onOptionsItemSelected
-    // COMPLETED (11) Within this method, get the ID from the MenuItem
-    // COMPLETED (12) If the ID equals R.id.action_refresh, create and set a new adapter on the RecyclerView and return true
-    // COMPLETED (13) For now, for all other IDs, return super.onOptionsItemSelected
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

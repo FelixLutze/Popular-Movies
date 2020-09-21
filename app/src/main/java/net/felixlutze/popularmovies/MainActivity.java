@@ -1,6 +1,8 @@
 package net.felixlutze.popularmovies;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RequestQueue mRequestQueue;
     private ArrayList<MovieItem> movieItemList = new ArrayList<>();
+    private String movieSorting = "popular";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +39,32 @@ public class MainActivity extends AppCompatActivity {
         //Increase Performance
         mRecyclerView.setHasFixedSize(true);
 
-        populateUi();
+        populateUi(movieSorting);
     }
 
-    public void populateUi() {
+    public void populateUi(String movieSorting) {
+        //clear list by default
+        movieItemList.clear();
         mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON("https://api.themoviedb.org/3/discover/movie?api_key=<<API-KEY>>&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1");
+        parseJSON(movieSorting);
     }
 
-    public void parseJSON(String url) {
+    public void parseJSON(String movieSorting) {
+
+        String apiKey = "API-KEY";
+        String url = "https://api.themoviedb.org/3/discover/movie?api_key="+apiKey+"&sort_by=" ;
+
+        switch (movieSorting) {
+            case "rating":
+                url = url.concat("vote_average.desc&include_adult=true&page=1");
+                break;
+
+            case "popular":
+                url = url.concat("popularity.desc&include_adult=true&page=1");
+                break;
+        }
+
+        //https://api.themoviedb.org/3/discover/movie?api_key=a79ca4a1a3f64471019801edc4668e08&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -81,5 +101,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mRequestQueue.add(request);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_menu, menu);
+        return true;
+    }
+
+    // COMPLETED (10) Override onOptionsItemSelected
+    // COMPLETED (11) Within this method, get the ID from the MenuItem
+    // COMPLETED (12) If the ID equals R.id.action_refresh, create and set a new adapter on the RecyclerView and return true
+    // COMPLETED (13) For now, for all other IDs, return super.onOptionsItemSelected
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int itemId = item.getItemId();
+
+        switch (itemId) {
+            case R.id.movie_rating:
+                movieSorting = "rating";
+                populateUi(movieSorting);
+                break;
+            case R.id.movie_popular:
+                movieSorting = "popular";
+                populateUi(movieSorting);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

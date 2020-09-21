@@ -30,7 +30,7 @@ public class MovieDetails extends AppCompatActivity {
         String rating = intent.getStringExtra("rating");
         String overview = intent.getStringExtra("overview");
 
-        Picasso.get().load("https://image.tmdb.org/t/p/w500/" + backdrop).into(mBackdrop);
+        Picasso.get().load("https://image.tmdb.org/t/p/w500/" + backdrop).placeholder(R.drawable.ic_launcher_foreground).into(mBackdrop);
         mName.setText(name);
         mReleased.setText(released);
         mRating.setText(rating);

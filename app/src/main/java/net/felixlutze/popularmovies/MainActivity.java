@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        //https://api.themoviedb.org/3/discover/movie?api_key=a79ca4a1a3f64471019801edc4668e08&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

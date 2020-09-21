@@ -52,7 +52,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(MovieViewHolder holder, int position) {
         final MovieItem currentMovieItem = mMovieItemList.get(position);
 
-        Picasso.get().load(currentMovieItem.getImageResource()).into(holder.image);
+        Picasso.get().load(currentMovieItem.getImageResource()).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
         holder.name.setText(currentMovieItem.getName() + " #" + (position+1));
         holder.released.setText(currentMovieItem.getReleased());
         holder.rating.setText(currentMovieItem.getRating());

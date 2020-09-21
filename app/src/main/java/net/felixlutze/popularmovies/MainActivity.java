@@ -76,10 +76,13 @@ public class MainActivity extends AppCompatActivity {
                                 String name = movie.getString("title");
                                 String image = movie.getString("poster_path");
                                 String rating = movie.getString("vote_average");
-                                String released = movie.getString("release_date");
-
                                 String backdrop = movie.getString("backdrop_path");
+                                String released = movie.getString("release_date");
+                                if (released.isEmpty())
+                                    released = "n/a";
                                 String overview = movie.getString("overview");
+                                if (overview.isEmpty())
+                                    overview = "n/a";
 
                                 movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w342/"+image, name, rating, released, backdrop, overview));
                             }

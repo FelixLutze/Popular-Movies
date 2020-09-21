@@ -41,6 +41,23 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="21sp"
+                android:text="Overview:"/>
+
+            <TextView
+                android:id="@+id/movie_overview"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:textSize="21sp"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ante, fringilla a convallis id, euismod in nisl. Sed molestie aliquam blandit. Curabitur non elit ut odio gravida vulputate. Aliquam gravida hendrerit molestie. Ut fringilla faucibus libero, dapibus imperdiet ipsum accumsan vel. Aenean ligula leo, semper eu suscipit in, molestie nec sapien. Nullam hendrerit ex eget ipsum lobortis consequat. Fusce elementum urna a ante lacinia consequat. Praesent rutrum ut lectus volutpat eleifend. Sed viverra lectus id elit imperdiet congue. Sed eu mi nulla. Suspendisse rutrum metus vitae odio laoreet, gravida suscipit turpis ullamcorper. Aenean tempor enim tortor, eu vestibulum risus pharetra id. Maecenas eget justo nec lorem malesuada accumsan a quis turpis."/>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="21sp"
                 android:text="Released: "/>
 
             <TextView
@@ -68,22 +85,6 @@
                 android:textSize="21sp"
                 android:paddingBottom="7dp"
                 tools:text="7.5"/>
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="21sp"
-                android:text="Overview:"/>
-
-            <TextView
-                android:id="@+id/movie_overview"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="21sp"
-                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ante, fringilla a convallis id, euismod in nisl. Sed molestie aliquam blandit. Curabitur non elit ut odio gravida vulputate. Aliquam gravida hendrerit molestie. Ut fringilla faucibus libero, dapibus imperdiet ipsum accumsan vel. Aenean ligula leo, semper eu suscipit in, molestie nec sapien. Nullam hendrerit ex eget ipsum lobortis consequat. Fusce elementum urna a ante lacinia consequat. Praesent rutrum ut lectus volutpat eleifend. Sed viverra lectus id elit imperdiet congue. Sed eu mi nulla. Suspendisse rutrum metus vitae odio laoreet, gravida suscipit turpis ullamcorper. Aenean tempor enim tortor, eu vestibulum risus pharetra id. Maecenas eget justo nec lorem malesuada accumsan a quis turpis."/>
         </LinearLayout>
     </LinearLayout>
 

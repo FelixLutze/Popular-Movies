@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         mProgressBar = findViewById(R.id.progressBar);
         //Setup RecyclerView for movie List
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this,2);
         mRecyclerView = findViewById(R.id.movies_view);
         mRecyclerView.setLayoutManager(mLayoutManager);
         //Increase Performance
@@ -69,16 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void parseJSON(String movieSorting) {
         //Enter your API-Key at https://api.themoviedb.org
-        String apiKey = "API-KEY";
-        String url = "https://api.themoviedb.org/3/discover/movie?api_key="+apiKey+"&sort_by=" ;
+        String apiKey = "a79ca4a1a3f64471019801edc4668e08";
+        String url = null;
 
         switch (movieSorting) {
             case "rating":
-                url = url.concat("vote_average.desc&include_adult=true&page=1");
+                url = "https://api.themoviedb.org/3/movie/top_rated?api_key="+apiKey;
                 break;
 
             case "popular":
-                url = url.concat("popularity.desc&include_adult=true&page=1");
+                url = "https://api.themoviedb.org/3/movie/popular?api_key="+apiKey;
                 break;
         }
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (overview.isEmpty())
                                     overview = "n/a";
 
-                                movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w342/"+image, name, rating, released, backdrop, overview));
+                                movieItemList.add(new MovieItem("https://image.tmdb.org/t/p/w500/"+image, name, rating, released, "https://image.tmdb.org/t/p/w1280/"+backdrop, overview));
                             }
                             RecyclerView.Adapter mAdapter = new MovieAdapter(movieItemList, MainActivity.this);
                             mRecyclerView.setAdapter(mAdapter);

@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void parseJSON(String movieSorting) {
-        //Enter your API-Key at https://api.themoviedb.org
-        String apiKey = "a79ca4a1a3f64471019801edc4668e08";
+        //Get your API-Key at https://api.themoviedb.org
+        String apiKey = "API-KEY";
         String url = null;
 
         switch (movieSorting) {

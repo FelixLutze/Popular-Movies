@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -48,7 +48,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(MovieViewHolder holder, int position) {
         final MovieItem currentMovieItem = mMovieItemList.get(position);
 
-        Picasso.get().load(currentMovieItem.getImageResource()).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
+        Glide.with(context).load(currentMovieItem.getImageResource()).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
         holder.rank.setText("#" + (position+1));
 
         holder.itemView.setOnClickListener(new View.OnClickListener()

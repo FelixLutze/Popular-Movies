@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 public class MovieDetails extends AppCompatActivity {
 
@@ -31,7 +31,7 @@ public class MovieDetails extends AppCompatActivity {
         String overview = intent.getStringExtra("overview");
 
         this.setTitle(name);
-        Picasso.get().load(backdrop).placeholder(R.drawable.ic_launcher_foreground).into(mBackdrop);
+        Glide.with(this).load(backdrop).placeholder(R.drawable.ic_launcher_foreground).into(mBackdrop);
         mName.setText(name);
         mReleased.setText(released);
         mRating.setText(rating);

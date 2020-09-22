@@ -14,9 +14,9 @@ This project regards to the <a href="https://www.udacity.com/course/android-deve
 
 ## Examples
 ### Movie list
-![Movie_list](https://dev.felixlutze.net/popular-movies/movie_list.png "Movie list")
+![Movie_list_example](https://dev.felixlutze.net/popular-movies/movie_list_demo.png "Movie list")
 ### Movie details
-![Movie_details](https://dev.felixlutze.net/popular-movies/movie_details.png "Movie details")
+![Movie_details_example](https://dev.felixlutze.net/popular-movies/movie_details_demo.png "Movie details")
 
 ## Getting Started
 Download and compile this Project with <a href="https://developer.android.com/studio" title="Android Studio">Android Studio</a>.

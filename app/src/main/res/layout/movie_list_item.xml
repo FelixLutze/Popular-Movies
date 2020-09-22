@@ -31,7 +31,6 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
-            android:padding="6dp"
             android:textSize="20sp"
             tools:text="#1"/>
 

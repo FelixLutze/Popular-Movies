@@ -15,7 +15,7 @@ This project regards to the <a href="https://www.udacity.com/course/android-deve
 
 ## Getting Started
 <ul>
-  <li>Download and compile this Project with <a href="https://developer.android.com/studio" title="Android Studio">Android Studio</a>.</li>
+  <li>Pull and compile this Project with <a href="https://developer.android.com/studio" title="Android Studio">Android Studio</a>.</li>
   <li>Get an API-Key at <a href="https://api.themoviedb.org" title="api.themoviedb.org">api.themoviedb.org</a> and assign it to the "apiKey" variable in the MainActivity class.</li>
 </ul>
 
